@@ -54,6 +54,17 @@ def agregar_congelados(lista_congelados):
     producto = Congelados(nombre)
     lista_congelados.append(producto)
 
+def imprimir_listas(lista_frescos, lista_refrigerados, lista_congelados):
+    print("LISTA FRESCOS: ")
+    for fresco in lista_frescos:
+        print(fresco)
+    print("LISTA REFRIGERADOS: ")
+    for refrigerado in lista_refrigerados:
+        print(refrigerado)
+    print("LISTA CONGELADOS:")
+    for congelado in lista_congelados:
+        print(congelado)
+
 def main():
     lista_frescos = []
     lista_refrigerados = []
@@ -78,15 +89,7 @@ def main():
         print("3. CONGELADOS")
         print("4. TERMINAR")
         tipo = int(input("Dime que tipo de producto quieres agregar: "))
-    print("LISTA FRESCOS: ")
-    for fresco in lista_frescos:
-        print(fresco)
-    print("LISTA REFRIGERADOS: ")
-    for refrigerado in lista_refrigerados:
-        print(refrigerado)
-    print("LISTA CONGELADOS:")
-    for congelado in lista_congelados:
-        print(congelado)
+    imprimir_listas(lista_frescos, lista_refrigerados, lista_congelados)
 
 
 main()
