@@ -31,6 +31,15 @@ class Congelados(Producto):
     def __str__(self):
         return f"{super().__str__()} | Temperatura: {self.temperatura}°C"
 
+def agregar_frescos(lista_frescos):
+    nombre = input("Dime el nombre del producto: ")
+    fecha_caducidad = input("Dime la fecha de caducidad: ")
+    numero_lote = int(input("Dime el número de lote: "))
+    fecha_envasado = input("Dime la fecha de envasado: ")
+    pais_origen = input("Dime el país de origen: ")
+    producto = Frescos(nombre, fecha_caducidad, numero_lote, fecha_envasado, pais_origen)
+    lista_frescos.append(producto)
+    
 def main():
     lista_frescos = []
     lista_refrigerados = []
@@ -43,13 +52,7 @@ def main():
     while tipo == 1  or tipo == 2 or tipo == 3:
         match tipo:
             case 1:
-                nombre = input("Dime el nombre del producto: ")
-                fecha_caducidad = input("Dime la fecha de caducidad: ")
-                numero_lote = int(input("Dime el número de lote: "))
-                fecha_envasado = input("Dime la fecha de envasado: ")
-                pais_origen = input("Dime el país de origen: ")
-                producto = Frescos(nombre, fecha_caducidad, numero_lote, fecha_envasado, pais_origen)
-                lista_frescos.append(producto)
+                agregar_frescos(lista_frescos)
             case 2:
                 nombre = input("Dime el nombre del producto: ")
                 fecha_caducidad = input("Dime la fecha de caducidad: ")
@@ -78,5 +81,6 @@ def main():
     print("LISTA CONGELADOS:")
     for congelado in lista_congelados:
         print(congelado)
+
 
 main()
