@@ -39,6 +39,13 @@ def agregar_frescos(lista_frescos):
     pais_origen = input("Dime el país de origen: ")
     producto = Frescos(nombre, fecha_caducidad, numero_lote, fecha_envasado, pais_origen)
     lista_frescos.append(producto)
+
+def agregar_refrigerados(lista_refrigerados):
+    nombre = input("Dime el nombre del producto: ")
+    fecha_caducidad = input("Dime la fecha de caducidad: ")
+    numero_lote = int(input("Dime el número de lote: "))
+    producto = Refrigerados(nombre)
+    lista_refrigerados.append(producto)
     
 def main():
     lista_frescos = []
@@ -54,11 +61,7 @@ def main():
             case 1:
                 agregar_frescos(lista_frescos)
             case 2:
-                nombre = input("Dime el nombre del producto: ")
-                fecha_caducidad = input("Dime la fecha de caducidad: ")
-                numero_lote = int(input("Dime el número de lote: "))
-                producto = Refrigerados(nombre)
-                lista_refrigerados.append(producto)
+                agregar_refrigerados(lista_refrigerados)
             case 3:
                 nombre = input("Dime el nombre del producto: ")
                 fecha_caducidad = input("Dime la fecha de caducidad: ")
@@ -81,6 +84,13 @@ def main():
     print("LISTA CONGELADOS:")
     for congelado in lista_congelados:
         print(congelado)
+
+def agregar_refrigerados(lista_refrigerados):
+    nombre = input("Dime el nombre del producto: ")
+    fecha_caducidad = input("Dime la fecha de caducidad: ")
+    numero_lote = int(input("Dime el número de lote: "))
+    producto = Refrigerados(nombre)
+    lista_refrigerados.append(producto)
 
 
 main()
