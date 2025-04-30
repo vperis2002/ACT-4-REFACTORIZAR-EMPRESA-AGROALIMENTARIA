@@ -12,15 +12,24 @@ class Frescos(Producto):
         self.fecha_envasado = fecha_envasado
         self.pais_origen = pais_origen
 
+    def __str__(self):
+        return f"{super().__str__()} | Envasado: {self.fecha_envasado} | Origen: {self.pais_origen}"
+
 class Refrigerados(Producto):
     def __init__(self, nombre, fecha_caducidad, numero_lote, cod_organismo):
         super().__init__(nombre, fecha_caducidad, numero_lote)
         self.cod_organismo = cod_organismo
 
+    def __str__(self):
+        return f"{super().__str__()} | Código organismo: {self.cod_organismo}"
+
 class Congelados(Producto):
     def __init__(self, nombre, fecha_caducidad, numero_lote, temperatura):
         super().__init__(nombre, fecha_caducidad, numero_lote)
         self.temperatura = temperatura
+
+    def __str__(self):
+        return f"{super().__str__()} | Temperatura: {self.temperatura}°C"
 
 def main():
     lista_frescos = []
